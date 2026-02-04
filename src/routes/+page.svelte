@@ -88,7 +88,7 @@
       />
       {#if finalTextFinished && !choiceMade}
         <div
-          in:fade={{ delay: 2000, duration: 2000 }}
+          in:fade={{ duration: 2000 }}
           class="flex flex-col gap-3 p-3 relative"
         >
           <button
