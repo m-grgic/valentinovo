@@ -21,7 +21,7 @@
 
   const handlePointerUp = () => scale.set(1);
 
-  const drainRate = $derived(0.2 + pressValue / 180);
+  const drainRate = $derived(0.2 + pressValue / 250);
 
   const handlePointerDown = () => {
     scale.set(0.8);
