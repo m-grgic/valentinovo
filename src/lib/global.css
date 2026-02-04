@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+html {
+  @apply bg-red-100 text-4xl text-red-950/65 overflow-hidden
+}
+
+body {
+  @apply flex items-center justify-center w-screen h-screen
+}
+
+@theme {
+
+  /* Tailwind v4 custom animations */
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100vw);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-out-left {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    to {
+      transform: translateX(-100vw);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-through-screen {
+    from {
+      transform: translateX(100vw);
+      opacity: 1;
+    }
+
+    to {
+      transform: translateX(-100vw);
+      opacity: 0;
+    }
+  }
+
+  --animate-sweep-in: slide-in-right 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-sweep-out: slide-out-left 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-sweep-through: slide-through-screen 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.button {
+  @apply px-3 py-1 font-semibold rounded-2xl
+}
+
+.rain {
+  position: fixed;
+  top: -1vh;
+  font-size: 2rem;
+  transform: translateY(0);
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(105vh);
+  }
+}
